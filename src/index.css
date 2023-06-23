@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components{
+    .text-outline-bold{
+        text-shadow: 2px 2px 0px #000000, 2px 0px 0px #000000, 2px -2px 0px #000000, 0px -2px 0px #000000, -2px -2px 0px #000000, -2px 0px 0px #000000, -2px 2px 0px #000000, -2px 2px 0px #000000;
+    }
+    .text-outline-thin{
+        text-shadow: 1px 1px 0px #000000, 1px 0px 0px #000000, 1px -1px 0px #000000, 0px -1px 0px #000000, -1px -1px 0px #000000, -1px 0px 0px #000000, -1px 1px 0px #000000, -1px 1px 0px #000000;
+    }
+
+    .button{
+        @apply
+        text-center cursor-pointer
+        border rounded-lg 
+        h-fit w-fit px-2 py-1
+        border-black 
+        text-black
+        select-none
+        hover:scale-105
+        transition-all
+        
+    }
+    .dark-mode-button{
+
+        @apply
+        -m-4 hover:m-0 rounded-full w-16 h-16 transition-all 
+        hover:bg-zinc-900 hover:scale-150
+        dark:hover:bg-zinc-100
+        fixed top-0 right-0
+        dark:bg-amber-400
+        bg-zinc-600
+        shadow-lg dark:shadow-amber-400 shadow-zinc-900
+        rotate-45
+
+        /*
+         import { ref } from "@vue/reactivity"
+        const counter = ref(1)
+        const toggleDark=()=>{
+            counter.value++
+            if ( counter.value%2==0)
+            document.querySelector("html").setAttribute("class","dark")
+            else
+            document.querySelector("html").setAttribute("class","")
+        } 
+        */
+    }
+}
