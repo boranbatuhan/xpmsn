@@ -8,7 +8,7 @@
 
 <style>
 html{
-  background-image: url("src/assets/941898.jpg");
+  background-image: url("/src/assets/941898.jpg");
   background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
