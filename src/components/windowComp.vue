@@ -1,6 +1,6 @@
 <template>
-    <div class="p-32">
-    <div class="window w-fit bg-[#fcfcfe]">
+    <div id="dxy" class="">
+    <div  class="window w-fit bg-[#fcfcfe]">
         <div class=" title-bar">
             <div class="title-bar-text">A Title Bar</div>
             <div class="flex items-center justify-center gap-1">
@@ -20,7 +20,52 @@
     </div>
 
 </template>
+
 <script setup>
+import { onMounted, ref } from 'vue';
+const pressCTRL = ref(false)
+
+onMounted(()=>{
+
+    window.onload = addListeners();
+
+function addListeners(){
+    document.getElementById('dxy').addEventListener('mousedown', mouseDown, false);
+    window.addEventListener('mouseup', mouseUp, false);
+
+}
+
+function mouseUp()
+{
+    window.removeEventListener('mousemove', divMove, true);
+}
+
+function mouseDown(e){
+  window.addEventListener('mousemove', divMove, true);
+}
+
+function divMove(e){
+    if (e.ctrlKey) 
+    {
+        var div = document.getElementById('dxy');
+    var divWidth = div.offsetWidth ;
+    var divHeight = div.offsetHeight +30; // taskbar offset
+    
+    var newX = Math.max(0, e.clientX - divWidth/2);
+    var newY = Math.max(0, e.clientY - divHeight/2);
+    
+    var maxX = window.innerWidth - divWidth;
+    var maxY = window.innerHeight - divHeight;
+    
+    var adjustedX = Math.min(maxX, newX);
+    var adjustedY = Math.min(maxY, newY);
+    
+    div.style.position = 'absolute';
+    div.style.top = adjustedY + 'px';
+    div.style.left = adjustedX + 'px';
+    }
+}
+})
 </script>
 <style scoped>
 
