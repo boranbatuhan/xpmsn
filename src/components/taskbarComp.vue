@@ -1,17 +1,18 @@
 <template>
 
-        <div class="taskbar flex items-center justify-between">
+        <div class="taskbar flex items-center justify-between z-[9999]">
           <button class="taskbar__start flex items-center justify-center gap-1 rounded-r-lg  ">
             <img class="taskbar__start--logo !w-5 !h-5" src="/src/assets/xplogo.png" alt="Windows">
               <p class="tracking-wider pr-2">start</p>
           </button>
           <button class="taskbar__end h-full w-[100px] text-white border box-border border-t-[#075dca] border-b-[#0a5bc6] border-r-transparent border-l-black ">
-            18:47
+            <clock-comp></clock-comp>
           </button>
         </div>
 </template>
 
 <script setup>
+import clockComp from '/src/components/clockComp.vue';
 </script>
 
 <style scoped>

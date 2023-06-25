@@ -1,18 +1,18 @@
 <template>
-    <div id="dxy" class="">
+    <div id="dxy" class="z-[9990]">
     <div  class="window w-fit bg-[#fcfcfe]">
-        <div class=" title-bar">
-            <div class="title-bar-text">A Title Bar</div>
+        <div class=" title-bar"  @mousedown="titlebarClick=true" @mouseup="titlebarClick=false"  @mouseleave="handleMouseUp" >
+            <div class="title-bar-text" @mousedown="titlebarClick=true" @mouseup="titlebarClick=false"  @mouseleave="handleMouseUp">A Title Bar</div>
             <div class="flex items-center justify-center gap-1">
-            <div class="w-[22px] h-[22px] hover:shadow-inner hover:shadow-white rounded-sm transition-all duration-75 active:opacity-70 box-border ring-0 outline-none active:shadow-black minimize">
+            <div  @click="titlebarClick=false" class="w-[22px] h-[22px] hover:shadow-inner hover:shadow-white rounded-sm transition-all duration-75 active:opacity-70 box-border ring-0 outline-none active:shadow-black minimize">
             </div>
-            <div class="w-[22px] h-[22px] hover:shadow-inner hover:shadow-white rounded-sm transition-all duration-75 active:opacity-70 box-border ring-0 outline-none active:shadow-black fullsize">
+            <div  @click="titlebarClick=false" class="w-[22px] h-[22px] hover:shadow-inner hover:shadow-white rounded-sm transition-all duration-75 active:opacity-70 box-border ring-0 outline-none active:shadow-black fullsize">
             </div>
-            <div class="w-[22px] h-[22px] hover:shadow-inner hover:shadow-white rounded-sm transition-all duration-75 active:opacity-70 box-border ring-0 outline-none active:shadow-black close">
+            <div  @click="titlebarClick=false" class="w-[22px] h-[22px] hover:shadow-inner hover:shadow-white rounded-sm transition-all duration-75 active:opacity-70 box-border ring-0 outline-none active:shadow-black close">
             </div>
             </div>
         </div>
-        <div class="p-4">
+        <div class="p-4 select-none" @mouseup="titlebarClick=false">
             <p>selamalala</p>
         </div>
     </div>
@@ -23,7 +23,7 @@
 
 <script setup>
 import { onMounted, ref } from 'vue';
-const pressCTRL = ref(false)
+const titlebarClick = ref(false)
 
 onMounted(()=>{
 
@@ -45,7 +45,8 @@ function mouseDown(e){
 }
 
 function divMove(e){
-    if (e.ctrlKey) 
+    // if (e.shiftKey) 
+    if(titlebarClick.value==true)
     {
         var div = document.getElementById('dxy');
     var divWidth = div.offsetWidth ;
@@ -63,6 +64,7 @@ function divMove(e){
     div.style.position = 'absolute';
     div.style.top = adjustedY + 'px';
     div.style.left = adjustedX + 'px';
+
     }
 }
 })
