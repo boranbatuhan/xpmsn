@@ -5,7 +5,11 @@ module.exports = {
   darkMode:"class",
   content: [],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily:{
+        "segoe-ui":["segoe-ui"]
+      }
+    },
   },
   plugins: [],
 }

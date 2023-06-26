@@ -10,7 +10,8 @@ var selectionArea = document.getElementById('selectionArea');
 var startX, startY, endX, endY;
 
 document.addEventListener('mousedown', function(event) {
-  if (event.ctrlKey) {
+
+  if (event.target.localName=="html") {
 
     isMouseDown = true;
   startX = event.clientX;
@@ -24,7 +25,7 @@ document.addEventListener('mousedown', function(event) {
 });
 
 document.addEventListener('mousemove', function(event) {
-  if (isMouseDown && event.ctrlKey) {
+  if (isMouseDown && event.target.localName=="html") {
     endX = event.clientX;
     endY = event.clientY;
     var width = endX - startX;

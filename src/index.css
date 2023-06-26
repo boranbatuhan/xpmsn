@@ -2,7 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-family: "segoe-ui";
+    src: url("/src/Fonts/Segoe UI.TTF");
+}
+
 @layer components{
+    
     .text-outline-bold{
         text-shadow: 2px 2px 0px #000000, 2px 0px 0px #000000, 2px -2px 0px #000000, 0px -2px 0px #000000, -2px -2px 0px #000000, -2px 0px 0px #000000, -2px 2px 0px #000000, -2px 2px 0px #000000;
     }
