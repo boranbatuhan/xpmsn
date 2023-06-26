@@ -1,5 +1,5 @@
 <template>
-    <div id="rightclickmenu" @mouseleave="closeMenu" class="w-40 hidden absolute border-zinc-400 border-[1px]  bg-white p-[2px] rc-shadow">
+    <div id="rightclickmenu" @mouseleave="closeMenu" @click="closeMenu" class="w-40 hidden absolute border-zinc-400 border-[1px]  bg-white p-[2px] rc-shadow">
         <ul class="text-xs select-none cursor-default">
             <ul class="border-b border-zinc-400 pb-1">
                 <li class="selectarea flex items-center justify-between group"><p>View</p> <svg class="rotate-90 group-hover:fill-white" xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 24 24"><path d="M24 22h-24l12-20z"/></svg></li>

@@ -8,7 +8,8 @@ module.exports = {
     extend: {
       fontFamily:{
         "segoe-ui":["segoe-ui"]
-      }
+      },
+
     },
   },
   plugins: [],
