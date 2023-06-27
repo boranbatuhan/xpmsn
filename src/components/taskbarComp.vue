@@ -1,7 +1,7 @@
 <template>
 
         <div class="taskbar flex items-center justify-between z-[9999]">
-          <button class="taskbar__start flex items-center justify-center gap-1 rounded-r-lg  ">
+          <button @click="store.state.isOpenStartMenu = !store.state.isOpenStartMenu" class="taskbar__start flex items-center justify-center gap-1 rounded-r-lg  ">
             <img class="taskbar__start--logo !w-5 !h-5" src="/src/assets/xplogo.png" alt="Windows">
               <p class="tracking-wider pr-2">start</p>
           </button>
@@ -9,10 +9,15 @@
             <clock-comp></clock-comp>
           </button>
         </div>
+
+<startmenu-comp></startmenu-comp>
 </template>
 
 <script setup>
+import startmenuComp from '/src/components/startmenuComp.vue';
 import clockComp from '/src/components/clockComp.vue';
+import store from "/src/store"
+
 </script>
 
 <style scoped>
