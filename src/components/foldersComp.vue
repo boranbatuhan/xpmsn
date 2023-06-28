@@ -1,15 +1,15 @@
 <template>
     <div id="folders" class="fixed top-0 left-0 -z-10">
         <div id="myComputer" @click="selectFolder($event)" class="select-none border m-6 flex items-center folder justify-start flex-col text-center border-transparent hover:border-teal-400 hover:bg-sky-400/70 w-16 h-20 ">
-            <img class="h-10 select-none pointer-events-none" src="/src/assets/netshell.dll_14_1117-6.png" alt="computer-logo">
+            <img draggable="false"  class="h-10 select-none pointer-events-none" src="/src/assets/netshell.dll_14_1117-6.png" alt="computer-logo">
             <p class="text-xs select-none pointer-events-none text-white text-shadow h-4  w-full px-[1px] ">My Computer</p>
         </div>
         <div id="myImages" @click="selectFolder($event)" class="select-none border m-6 flex items-center folder justify-start flex-col text-center border-transparent hover:border-teal-400 hover:bg-sky-400/70 w-16 h-20 ">
-            <img class="h-10 select-none pointer-events-none" src="/src/assets/explorer.exe_14_252-3.png" alt="folder-logo">
+            <img draggable="false"  class="h-10 select-none pointer-events-none" src="/src/assets/explorer.exe_14_252-3.png" alt="folder-logo">
             <p class="text-xs select-none pointer-events-none text-white text-shadow h-4  w-full px-[1px] ">Resimlerim</p>
         </div>
         <div id="myMsn" @click="selectFolder($event)" class="select-none border m-6 flex items-center folder justify-start flex-col text-center border-transparent hover:border-teal-400 hover:bg-sky-400/70 w-16 h-20 ">
-            <img class="h-10 select-none pointer-events-none" src="/src/assets/msnlogo.png" alt="msn_logo">
+            <img draggable="false"  class="h-10 select-none pointer-events-none" src="/src/assets/msnlogo.png" alt="msn_logo">
             <p class="text-xs select-none pointer-events-none text-white text-shadow h-4  w-full px-[1px] ">Windows Live Messenger</p>
         </div>
     </div>
