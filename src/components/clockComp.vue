@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="text-sm leading-5">
         {{ time }}
     </div>
 </template>

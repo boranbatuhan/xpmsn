@@ -8,7 +8,11 @@
         </div>
         <div class="bg-zinc-500 h-full w-full flex items-center justify-center border-x-2 border-[#0831d9] flex-wrap">
             <div class="h-[2px] w-full bg-gradient-to-r from-transparent via-[#e4a668] to-transparent"></div>
-            <div class="w-1/2 h-full bg-white"></div>
+            <div class="w-1/2 h-full bg-white text-sm tracking-tighter  font-segoe-ui flex flex-col justify-end items-center">
+                <ul class="w-11/12 py-1 border-t border-zinc-300" >
+                    <li class="text-center w-full font-semibold flex items-center py-1 justify-center gap-4  hover:text-white hover:bg-[#316ac5] ">All Programs <img src="/src/assets/greenarrow.png" alt="greenarrow"></li>
+                </ul>
+            </div>
             <div class="w-1/2 h-full bg-[#d2e5fa] border-l border-l-blue-300"></div>
         </div>
         <div class="windows-blue-gradient-bottom shrink-0 h-10 self-end w-full flex items-center justify-end px-2 gap-2">

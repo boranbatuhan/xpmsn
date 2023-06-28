@@ -1,13 +1,17 @@
 <template>
 
         <div class="taskbar flex items-center justify-between z-[9999]">
-          <button @click="store.state.isOpenStartMenu = !store.state.isOpenStartMenu" class="taskbar__start flex items-center justify-center gap-1 rounded-r-lg  ">
+          <div @click="store.state.isOpenStartMenu = !store.state.isOpenStartMenu" class="taskbar__start flex items-center justify-center gap-1 rounded-r-lg  ">
             <img draggable="false"  class="taskbar__start--logo !w-5 !h-5" src="/src/assets/xplogo.png" alt="Windows">
               <p class="tracking-wider pr-2">start</p>
-          </button>
-          <button class="taskbar__end h-full w-[100px] text-white border box-border border-t-[#075dca] border-b-[#0a5bc6] border-r-transparent border-l-black ">
+          </div>
+          <div class="taskbar__end h-full w-[100px] text-white border box-border border-t-[#075dca] border-b-[#0a5bc6] border-r-transparent border-l-black flex items-center justify-end px-2 pt-1 text-sm gap-1">
+           <img src="/src/assets/bluetooth.png" alt="icon">
+           <img src="/src/assets/gatewall.png" alt="icon">
+           <img @click="soundOn = !soundOn" v-if="soundOn == true" src="/src/assets/soundon.png" alt="icon">
+           <img @click="soundOn = !soundOn" v-if="soundOn == false" src="/src/assets/soundoff.png" alt="icon">
             <clock-comp></clock-comp>
-          </button>
+          </div>
         </div>
 
 <startmenu-comp></startmenu-comp>
@@ -17,6 +21,9 @@
 import startmenuComp from '/src/components/startmenuComp.vue';
 import clockComp from '/src/components/clockComp.vue';
 import store from "/src/store"
+import { ref } from 'vue';
+
+const soundOn = ref(true)
 
 </script>
 
