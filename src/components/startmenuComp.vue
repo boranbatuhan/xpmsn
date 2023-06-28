@@ -29,7 +29,7 @@
                         <img draggable="false"  class="select-none active:opacity-70 bg-white" src="/src/assets/standby.png" alt="stand-by">
                         <p>Stand By</p>
                     </div>
-                    <div @click="closeModal= false" class="flex flex-col items-center justify-center gap-2">
+                    <div @click="shutdown" class="flex flex-col items-center justify-center gap-2">
                         <img draggable="false"  class="select-none active:opacity-70 bg-white" src="/src/assets/turnoffbig.png" alt="turnoff">
                         <p>Turn Off</p>
                     </div>
@@ -39,8 +39,8 @@
                     </div>
                 </div>
             </div>
-            <div class="text-white flex items-center justify-between px-2 h-[70px]">
-
+            <div class="flex items-center justify-end px-4 h-[70px]">
+                <button @click="closeModal= false" class="button">Cancel</button>
             </div>
         </div>
     </div>
@@ -50,6 +50,11 @@
 import { ref } from "vue"
 import store from "/src/store"
 const closeModal = ref(false)
+const shutdown =()=>{
+    closeModal.value= false
+    store.state.isOpenStartMenu=false
+    store.commit('turnOffWindows');
+}
 </script>
 
 <style scoped>
@@ -84,4 +89,8 @@ const closeModal = ref(false)
 
     }
 }
+
+
+
+
 </style>

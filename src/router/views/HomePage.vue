@@ -4,7 +4,8 @@
     <window-comp></window-comp>
     <taskbar-comp></taskbar-comp>
     <folders-comp></folders-comp>
-  
+<!-- close and restart screens -->
+<closescreen-func-comp></closescreen-func-comp> 
 </template>
 <script setup>
 import rightclickComp from "/src/components/rightclickComp.vue"
@@ -12,6 +13,7 @@ import selectareaComp from "/src/components/selectareaComp.vue";
 import taskbarComp from '/src/components/taskbarComp.vue';
 import windowComp from '/src/components/windowComp.vue';
 import foldersComp from "/src/components/foldersComp.vue"
+import closescreenFuncComp from "/src/components/screens/closesecreensFuncComp.vue"
 import { onMounted } from "vue";
 
 

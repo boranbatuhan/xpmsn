@@ -24,5 +24,9 @@ html{
     background-size: cover;
 
 }
+*{
+  font-family: "Pixelated MS Sans Serif",Arial;
+    -webkit-font-smoothing: antialiased;
+}
 
 </style>

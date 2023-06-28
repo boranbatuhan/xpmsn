@@ -6,39 +6,25 @@
     font-family: "segoe-ui";
     src: url("/src/Fonts/Segoe UI.TTF");
 }
+button {
 
-@layer components{
-    
-    .text-outline-bold{
-        text-shadow: 2px 2px 0px #000000, 2px 0px 0px #000000, 2px -2px 0px #000000, 0px -2px 0px #000000, -2px -2px 0px #000000, -2px 0px 0px #000000, -2px 2px 0px #000000, -2px 2px 0px #000000;
+    font-size: 11px;
+    box-sizing: border-box;
+    border: 1px solid #003c74;
+    background: linear-gradient(180deg,#fff,#ecebe5 86%,#d8d0c4);
+    box-shadow: none;
+    border-radius: 3px;
+    padding: 1px 4px;
     }
-    .text-outline-thin{
-        text-shadow: 1px 1px 0px #000000, 1px 0px 0px #000000, 1px -1px 0px #000000, 0px -1px 0px #000000, -1px -1px 0px #000000, -1px 0px 0px #000000, -1px 1px 0px #000000, -1px 1px 0px #000000;
+    button:hover{
+    box-shadow: 2px 2px 1px orange inset, -2px -2px 1px orange inset;
     }
-
-
-    .dark-mode-button{
-
-        @apply
-        -m-4 hover:m-0 rounded-full w-16 h-16 transition-all 
-        hover:bg-zinc-900 hover:scale-150
-        dark:hover:bg-zinc-100
-        fixed top-0 right-0
-        dark:bg-amber-400
-        bg-zinc-600
-        shadow-lg dark:shadow-amber-400 shadow-zinc-900
-        rotate-45
-
-        /*
-         import { ref } from "@vue/reactivity"
-        const counter = ref(1)
-        const toggleDark=()=>{
-            counter.value++
-            if ( counter.value%2==0)
-            document.querySelector("html").setAttribute("class","dark")
-            else
-            document.querySelector("html").setAttribute("class","")
-        } 
-        */
+    button:active{
+    box-shadow: none;
+    background: linear-gradient(180deg,#cdcac3,#e3e3db 8%,#e5e5de 94%,#f2f2f1);
     }
-}
+    button:focus {
+    outline: 1px dotted #000;
+    outline-offset: -4px;
+    box-shadow: inset -1px 1px #cee7ff, inset 1px 2px #98b8ea, inset -2px 2px #bcd4f6, inset 1px -1px #89ade4, inset 2px -2px #89ade4;
+    }
