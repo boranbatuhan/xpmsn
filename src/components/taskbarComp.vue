@@ -5,11 +5,11 @@
             <img draggable="false"  class="taskbar__start--logo !w-5 !h-5" src="/src/assets/xplogo.png" alt="Windows">
               <p class="tracking-wider pr-2">start</p>
           </div>
-          <div class="taskbar__end h-full w-[100px] text-white border box-border border-t-[#075dca] border-b-[#0a5bc6] border-r-transparent border-l-black flex items-center justify-end px-2 pt-1 text-sm gap-1">
-           <img src="/src/assets/bluetooth.png" alt="icon">
-           <img src="/src/assets/gatewall.png" alt="icon">
-           <img @click="soundOn = !soundOn" v-if="soundOn == true" src="/src/assets/soundon.png" alt="icon">
-           <img @click="soundOn = !soundOn" v-if="soundOn == false" src="/src/assets/soundoff.png" alt="icon">
+          <div class="taskbar__end h-full w-fit text-white border box-border border-t-[#075dca] border-b-[#0a5bc6] border-r-transparent border-l-black flex items-center justify-end px-2 pt-1 text-sm gap-1">
+           <img draggable="false" src="/src/assets/bluetooth.png" alt="icon">
+           <img draggable="false" src="/src/assets/gatewall.png" alt="icon">
+           <img draggable="false" @click="soundOn = !soundOn" v-if="soundOn == true" src="/src/assets/soundon.png" alt="icon">
+           <img draggable="false" @click="soundOn = !soundOn" v-if="soundOn == false" src="/src/assets/soundoff.png" alt="icon">
             <clock-comp></clock-comp>
           </div>
         </div>

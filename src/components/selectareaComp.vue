@@ -11,7 +11,7 @@ var startX, startY, endX, endY;
 
 document.addEventListener('mousedown', function(event) {
 
-  if (event.target.localName=="html" || event.target.id =="folders"  || event.target.id.includes("my")) {
+  if (event.target.localName=="html" || event.target.id =="folders" || event.target.id =="error" || event.target.id.includes("my")) {
 
     isMouseDown = true;
   startX = event.clientX;
@@ -25,7 +25,7 @@ document.addEventListener('mousedown', function(event) {
 });
 
 document.addEventListener('mousemove', function(event) {
-  if (isMouseDown && event.target.localName=="html" || event.target.id =="folders" || event.target.id =="startmenu" || event.target.id.includes("my")) {
+  if (isMouseDown && event.target.localName=="html" || event.target.id =="folders" || event.target.id =="startmenu" || event.target.id =="error" || event.target.id.includes("my")) {
     endX = event.clientX;
     endY = event.clientY;
     var width = endX - startX;

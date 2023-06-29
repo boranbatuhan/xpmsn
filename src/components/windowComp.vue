@@ -1,8 +1,8 @@
 <template>
-    <div id="dxy" class="z-[9990]">
+    <div :id="props.id" class="z-[9990] shrink-0 absolute top-10">
     <div  class="window w-fit bg-[#fcfcfe]">
-        <div class=" title-bar"  @mousedown="titlebarClick=true" @mouseup="titlebarClick=false"  @mouseleave="handleMouseUp" >
-            <div class="title-bar-text" @mousedown="titlebarClick=true" @mouseup="titlebarClick=false"  @mouseleave="handleMouseUp">A Title Bar</div>
+        <div class=" title-bar shrink-0"  @mousedown="titlebarClick=true" @mouseup="titlebarClick=false"  @mouseleave="handleMouseUp" >
+            <div class="title-bar-text shrink-0" @mousedown="titlebarClick=true" @mouseup="titlebarClick=false"  @mouseleave="handleMouseUp">{{ props.titleBar }}</div>
             <div class="flex items-center justify-center gap-1">
             <div  @click="titlebarClick=false" class="w-[22px] h-[22px] hover:shadow-inner hover:shadow-white rounded-sm transition-all duration-75 active:opacity-70 box-border ring-0 outline-none active:shadow-black minimize">
             </div>
@@ -13,7 +13,10 @@
             </div>
         </div>
         <div class="p-4 select-none" @mouseup="titlebarClick=false">
-            <p>selamalala</p>
+            <p>Hello world !</p>
+            <p>{{ props.id }}</p>
+            <button>ok</button>
+
         </div>
     </div>
 
@@ -25,12 +28,39 @@
 import { onMounted, ref } from 'vue';
 const titlebarClick = ref(false)
 
-onMounted(()=>{
 
+const props = defineProps({
+    id:String,
+    position:Number,
+    titleBar:String
+})
+
+
+
+
+onMounted(()=>{
+    
     window.onload = addListeners();
+    const divtemp = document.getElementById(props.id)
+
+    if (props.position <= 4){
+        divtemp.style.left = props.position*(divtemp.offsetWidth+10)+'px'
+
+    }
+    else if(props.position > 4 && props.position <= 8)
+    {
+    divtemp.style.top = (divtemp.offsetHeight+50)+'px'
+    divtemp.style.left = (props.position - 4)*(divtemp.offsetWidth+15)+'px'
+    }
+    else if(props.position > 8)
+    {
+    divtemp.style.top = (divtemp.offsetHeight+150)+'px'
+    divtemp.style.left = (props.position - 8)*(divtemp.offsetWidth+20)+'px'
+    } 
 
 function addListeners(){
-    document.getElementById('dxy').addEventListener('mousedown', mouseDown, false);
+    document.getElementById(props.id).addEventListener('mousedown', mouseDown, false);
+
     window.addEventListener('mouseup', mouseUp, false);
 
 }
@@ -42,18 +72,21 @@ function mouseUp()
 
 function mouseDown(e){
   window.addEventListener('mousemove', divMove, true);
+
 }
 
 function divMove(e){
-    // if (e.shiftKey) 
     if(titlebarClick.value==true)
     {
-        var div = document.getElementById('dxy');
+    var div = document.getElementById(props.id);
+    
+ 
+    
     var divWidth = div.offsetWidth ;
     var divHeight = div.offsetHeight +30; // taskbar offset
     
-    var newX = Math.max(0, e.clientX - divWidth/2);
-    var newY = Math.max(0, e.clientY - divHeight/2);
+    var newX = Math.max(0, e.clientX+60 - divWidth/2);
+    var newY = Math.max(0, e.clientY+60 - divHeight/2);
     
     var maxX = window.innerWidth - divWidth;
     var maxY = window.innerHeight - divHeight;

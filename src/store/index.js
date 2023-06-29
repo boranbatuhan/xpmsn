@@ -8,7 +8,9 @@ const store = createStore({
         startingQuery:{
             loadingScreen:false,
             welcomeScreen:false,
-        }
+        },
+        folderCount:1,
+        folderCountError:false
     },
       mutations: {
     turnOnWindows(state ) {
@@ -36,6 +38,16 @@ const store = createStore({
             state.startButton=false
 
         }, 4000);
+    },
+    createFolder(state){
+      if(state.folderCount ==12)
+      {
+        state.folderCountError=true
+      }
+      if(state.folderCount <12)
+      {
+          state.folderCount += 1
+      }
     }
 }
 })
