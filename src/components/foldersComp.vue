@@ -36,7 +36,7 @@ watch(clickedFolder,(newValue,oldValue)=>{
     const oldSelected = document.getElementById(oldValue)
     if(newValue != ""){
         
-    if(oldValue!="myMsn" && oldValue != "myComputer" && oldValue != "myImages")
+    if(oldValue!="myMsn" && oldValue != "myComputer" && oldValue != "myFolder")
     {
         newSelected.classList.add("select")
 
