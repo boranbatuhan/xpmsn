@@ -1,5 +1,5 @@
 <template>
-    <div :id="props.id" class="z-[9990] shrink-0 absolute top-10">
+    <div @click="store.state.selectedFolderTab='window'" :id="props.id" :class="{'!z-[9999]':store.state.selectedFolderTab=='window'}" class="z-[990] shrink-0 absolute top-10">
     <div  class="window w-fit bg-[#fcfcfe]">
         <div class=" title-bar shrink-0"  @mousedown="titlebarClick=true" @mouseup="titlebarClick=false"  @mouseleave="handleMouseUp" >
             <div class="title-bar-text shrink-0" @mousedown="titlebarClick=true" @mouseup="titlebarClick=false"  @mouseleave="handleMouseUp">{{ props.titleBar }}</div>
@@ -8,7 +8,7 @@
             </div>
             <div  @click="titlebarClick=false" class="w-[22px] h-[22px] hover:shadow-inner hover:shadow-white rounded-sm transition-all duration-75 active:opacity-70 box-border ring-0 outline-none active:shadow-black fullsize">
             </div>
-            <div  @click="titlebarClick=false" class="w-[22px] h-[22px] hover:shadow-inner hover:shadow-white rounded-sm transition-all duration-75 active:opacity-70 box-border ring-0 outline-none active:shadow-black close">
+            <div  @click="removeWindow($event)" class="w-[22px] h-[22px] hover:shadow-inner hover:shadow-white rounded-sm transition-all duration-75 active:opacity-70 box-border ring-0 outline-none active:shadow-black close">
             </div>
             </div>
         </div>
@@ -26,6 +26,7 @@
 
 <script setup>
 import { onMounted, ref } from 'vue';
+import store from "/src/store"
 const titlebarClick = ref(false)
 
 
@@ -36,9 +37,19 @@ const props = defineProps({
 })
 
 
+function removeWindow(e) {
 
+   store.commit('removeFolder',props.id)
+    const windowId = e.target.offsetParent.id
+    console.log('windowId :>> ', windowId);
+  var delWindow = document.getElementById(windowId);
+  delWindow.parentNode.removeChild(delWindow);
+
+}
 
 onMounted(()=>{
+
+    store.state.folders.push(props.id)
     
     window.onload = addListeners();
     const divtemp = document.getElementById(props.id)

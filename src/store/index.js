@@ -9,8 +9,11 @@ const store = createStore({
             loadingScreen:false,
             welcomeScreen:false,
         },
+        folders:[],
         folderCount:1,
-        folderCountError:false
+        folderCountError:false,
+        selectedFolderTab:"window",
+        openComputerWindow:false
     },
       mutations: {
     turnOnWindows(state ) {
@@ -40,14 +43,18 @@ const store = createStore({
         }, 4000);
     },
     createFolder(state){
-      if(state.folderCount ==12)
+      if(state.folders.length >=1)
       {
         state.folderCountError=true
       }
-      if(state.folderCount <12)
+      if(state.folders.length <1)
       {
           state.folderCount += 1
       }
+    },
+    removeFolder(state,id){
+      state.folders=state.folders.filter(i => i != id)
+      state.folderCount = state.folders.length
     }
 }
 })

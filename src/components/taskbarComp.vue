@@ -1,11 +1,23 @@
 <template>
 
-        <div class="taskbar flex items-center justify-between z-[9999]">
+        <div class="taskbar flex items-center justify-start z-[9999]">
           <div @click="store.state.isOpenStartMenu = !store.state.isOpenStartMenu" class="taskbar__start flex items-center justify-center gap-1 rounded-r-lg  ">
             <img draggable="false"  class="taskbar__start--logo !w-5 !h-5" src="/src/assets/xplogo.png" alt="Windows">
               <p class="tracking-wider pr-2">start</p>
           </div>
-          <div class="taskbar__end h-full w-fit text-white border box-border border-t-[#075dca] border-b-[#0a5bc6] border-r-transparent border-l-black flex items-center justify-end px-2 pt-1 text-sm gap-1">
+          <img draggable="false" class="mx-4 w-5" src="/src/assets/iexplorer.png" alt="iexplorer">
+          <!-- folder tab -->
+          <div :class="{ 'bg-[#1b50b8] border-[#082875]':store.state.selectedFolderTab=='window'}" class="w-40 h-[80%] tab mt-px mr-1 px-2 gap-1 border-t border-y border-[#255be1] rounded-sm bg-[#3980f4] hover:bg-[#1b50b8] hover:border-[#082875] flex items-center justify-start" v-for="i in store.state.folders.length" :key="i">
+          <img draggable="false" src="/src/assets/explorer.exe_14_252-3.png" alt="folder" class="w-4">
+          <p class="text-xs text-white">window</p>
+          </div>
+          <!-- computer tab -->
+          <div v-if="store.state.openComputerWindow" :class="{ 'bg-[#1b50b8] border-[#082875]':store.state.selectedFolderTab=='computer'}" class="w-40 h-[80%] tab mt-px mr-1 px-2 gap-1 border-t border-y border-[#255be1] rounded-sm bg-[#3980f4] hover:bg-[#1b50b8] hover:border-[#082875] flex items-center justify-start">
+          <img draggable="false" src="/src/assets/computer.png" alt="folder" class="w-4">
+          <p class="text-xs text-white">My Computer</p>
+          </div>
+          
+          <div class="taskbar__end ml-auto h-full w-fit text-white border box-border border-t-[#075dca] border-b-[#0a5bc6] border-r-transparent border-l-black flex items-center justify-end px-2 pt-1 text-sm gap-1">
            <img draggable="false" src="/src/assets/bluetooth.png" alt="icon">
            <img draggable="false" src="/src/assets/gatewall.png" alt="icon">
            <img draggable="false" @click="soundOn = !soundOn" v-if="soundOn == true" src="/src/assets/soundon.png" alt="icon">
@@ -67,5 +79,9 @@ const soundOn = ref(true)
   box-shadow: 2px -0px 3px #20e2fc inset;
 
 
+}
+
+.tab{
+  box-shadow: 2px 2px 5px rgba(255, 255, 255, 0.267) inset;
 }
 </style>
