@@ -3,7 +3,7 @@
 <p align="center"> Windows xp experience in web </p>
 <h3 align="center"><a href="https://xpmsn.app/#/"> Click me </a> for live demo.</h3>
 
-<p align="center"><img src="src/assets/xpmsn.gif" loading="eager" alt="webres-demo" /></a> </p>
+<p align="center"><img src="src/assets/xpmsn-min.gif" loading="eager" alt="webres-demo" /></a> </p>
 
 <div align="center">
 <a href="https://vuejs.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vuejs/vuejs-original-wordmark.svg" alt="vuejs" width="40" height="40"/> </a> 
