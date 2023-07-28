@@ -21,8 +21,10 @@ import store from "/src/store"
 
 
 const dblClickedFolder=()=>{
+    
     store.commit('createFolder');
-
+    store.state.selectedFolderTab="window"
+    
 }
 
 

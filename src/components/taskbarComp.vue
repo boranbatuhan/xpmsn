@@ -7,12 +7,12 @@
           </div>
           <img draggable="false" class="mx-4 w-5" src="/src/assets/iexplorer.png" alt="iexplorer">
           <!-- folder tab -->
-          <div :class="{ 'bg-[#1b50b8] border-[#082875]':store.state.selectedFolderTab=='window'}" class="w-40 h-[80%] tab mt-px mr-1 px-2 gap-1 border-t border-y border-[#255be1] rounded-sm bg-[#3980f4] hover:bg-[#1b50b8] hover:border-[#082875] flex items-center justify-start" v-for="i in store.state.folders.length" :key="i">
+          <div @click="store.state.selectedFolderTab='window'" :class="{ '!bg-[#1b50b8] !border-[#082875]' : store.state.selectedFolderTab=='window'}" class="w-40 h-[80%] tab mt-px mr-1 px-2 gap-1 border-t border-y border-[#255be1] rounded-sm bg-[#3980f4] hover:bg-[#1b50b8] hover:border-[#082875] flex items-center justify-start" v-for="i in store.state.folders.length" :key="i">
           <img draggable="false" src="/src/assets/explorer.exe_14_252-3.png" alt="folder" class="w-4">
           <p class="text-xs text-white">window</p>
           </div>
           <!-- computer tab -->
-          <div v-if="store.state.openComputerWindow" :class="{ 'bg-[#1b50b8] border-[#082875]':store.state.selectedFolderTab=='computer'}" class="w-40 h-[80%] tab mt-px mr-1 px-2 gap-1 border-t border-y border-[#255be1] rounded-sm bg-[#3980f4] hover:bg-[#1b50b8] hover:border-[#082875] flex items-center justify-start">
+          <div @click="store.state.selectedFolderTab='computer'" v-if="store.state.openComputerWindow" :class="{ '!bg-[#1b50b8] !border-[#082875]':store.state.selectedFolderTab=='computer'}" class="w-40 h-[80%] tab mt-px mr-1 px-2 gap-1 border-t border-y border-[#255be1] rounded-sm bg-[#3980f4] hover:bg-[#1b50b8] hover:border-[#082875] flex items-center justify-start">
           <img draggable="false" src="/src/assets/computer.png" alt="folder" class="w-4">
           <p class="text-xs text-white">My Computer</p>
           </div>
