@@ -6,6 +6,7 @@
     <mycomputer-comp v-if="store.state.openComputerWindow"></mycomputer-comp>
     <taskbar-comp></taskbar-comp>
     <folders-comp></folders-comp>
+    <messenger-comp></messenger-comp>
 <!-- close and restart screens -->
 <closescreen-func-comp></closescreen-func-comp> 
 </template>
@@ -18,6 +19,7 @@ import foldersComp from "/src/components/foldersComp.vue"
 import errorwindowComp from "/src/components/errorwindowComp.vue";
 import closescreenFuncComp from "/src/components/screens/closesecreensFuncComp.vue"
 import mycomputerComp from "/src/components/mycomputerComp.vue";
+import messengerComp from "/src/components/messengerComp.vue";
 
 
 import {  onMounted } from "vue";
