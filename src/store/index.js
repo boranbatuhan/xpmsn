@@ -13,7 +13,8 @@ const store = createStore({
         folderCount:1,
         folderCountError:false,
         selectedFolderTab:"window",
-        openComputerWindow:false
+        openComputerWindow:false,
+        openMsnWindow:false
     },
       mutations: {
     turnOnWindows(state ) {

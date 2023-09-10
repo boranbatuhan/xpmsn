@@ -7,18 +7,30 @@
           </div>
           <img draggable="false" class="mx-4 w-5" src="/src/assets/iexplorer.png" alt="iexplorer">
           <!-- folder tab -->
-          <div @click="store.state.selectedFolderTab='window'" :class="{ '!bg-[#1b50b8] !border-[#082875]' : store.state.selectedFolderTab=='window'}" class="w-40 h-[80%] tab mt-px mr-1 px-2 gap-1 border-t border-y border-[#255be1] rounded-sm bg-[#3980f4] hover:bg-[#1b50b8] hover:border-[#082875] flex items-center justify-start" v-for="i in store.state.folders.length" :key="i">
+          <div @click="store.state.selectedFolderTab='window'" :class="{ '!bg-[#1658dd] !border-[#082875]' : store.state.selectedFolderTab=='window'}" class="w-40 h-[80%] tab mt-px mr-1 px-2 gap-1 border-t border-y border-[#255be1] rounded-sm bg-[#3980f4] hover:bg-[#1b50b8] hover:border-[#082875] flex items-center justify-start" v-for="i in store.state.folders.length" :key="i">
           <img draggable="false" src="/src/assets/explorer.exe_14_252-3.png" alt="folder" class="w-4">
           <p class="text-xs text-white">window</p>
           </div>
           <!-- computer tab -->
-          <div @click="store.state.selectedFolderTab='computer'" v-if="store.state.openComputerWindow" :class="{ '!bg-[#1b50b8] !border-[#082875]':store.state.selectedFolderTab=='computer'}" class="w-40 h-[80%] tab mt-px mr-1 px-2 gap-1 border-t border-y border-[#255be1] rounded-sm bg-[#3980f4] hover:bg-[#1b50b8] hover:border-[#082875] flex items-center justify-start">
+          <div @click="store.state.selectedFolderTab='computer'" v-if="store.state.openComputerWindow" :class="{ '!bg-[#1658dd] !border-[#082875]':store.state.selectedFolderTab=='computer'}" class="w-40 h-[80%] tab mt-px mr-1 px-2 gap-1 border-t border-y border-[#255be1] rounded-sm bg-[#3980f4] hover:bg-[#1b50b8] hover:border-[#082875] flex items-center justify-start">
           <img draggable="false" src="/src/assets/computer.png" alt="folder" class="w-4">
           <p class="text-xs text-white">My Computer</p>
+          </div>
+          <!-- msn tab -->
+          <div @click="store.state.selectedFolderTab='messenger'" v-if="store.state.openMsnWindow" :class="{ '!bg-[#1658dd] !border-[#082875]':store.state.selectedFolderTab=='messenger'}" class="w-40 h-[80%] tab mt-px mr-1 px-2 gap-1 border-t border-y border-[#255be1] rounded-sm bg-[#3980f4] hover:bg-[#1b50b8] hover:border-[#082875] flex items-center justify-start">
+          <img draggable="false" src="/src/assets/msnlogo.png" alt="folder" class="w-4">
+          <p class="text-xs text-white">Live Messenger</p>
           </div>
           
           <div class="taskbar__end ml-auto h-full w-fit text-white border box-border border-t-[#075dca] border-b-[#0a5bc6] border-r-transparent border-l-black flex items-center justify-end px-2 pt-1 text-sm gap-1">
            <img draggable="false" src="/src/assets/bluetooth.png" alt="icon">
+           <div class="relative">
+            <div v-if="fullScreen" class="w-52 drop-shadow-lg text-xs bg-white absolute select-none bottom-6 right-2 text-black border border-black px-2 py-1 rounded-lg rounded-br-none">
+              <p class="font-bold flex gap-2"><img loading="eager" draggable="false" class="w-5" src="/src/assets/info.png" alt="icon"> Full Screen <img @click="fullScreen=false" loading="eager" draggable="false" class="ml-auto w-4 h-4 cursor-pointer opacity-30 hover:opacity-60 " src="/src/assets/xclose.png" alt="icon"></p>
+              <p class="w-fit">Press F11 for better experience</p>
+            </div>
+            <img @click="fullScreen=true" draggable="false" src="/src/assets/fullsc.png" alt="icon">
+           </div>
            <img draggable="false" src="/src/assets/gatewall.png" alt="icon">
            <img draggable="false" @click="soundOn = !soundOn" v-if="soundOn == true" src="/src/assets/soundon.png" alt="icon">
            <img draggable="false" @click="soundOn = !soundOn" v-if="soundOn == false" src="/src/assets/soundoff.png" alt="icon">
@@ -33,10 +45,19 @@
 import startmenuComp from '/src/components/startmenuComp.vue';
 import clockComp from '/src/components/clockComp.vue';
 import store from "/src/store"
-import { ref } from 'vue';
+import { onMounted, ref } from 'vue';
 
 const soundOn = ref(true)
+const fullScreen = ref(false)
 
+onMounted(()=>{
+setTimeout(() => {
+  fullScreen.value=true
+  setTimeout(() => {
+  fullScreen.value=false
+  }, 10000);
+}, 3000);
+})
 </script>
 
 <style scoped>
@@ -84,4 +105,5 @@ const soundOn = ref(true)
 .tab{
   box-shadow: 2px 2px 5px rgba(255, 255, 255, 0.267) inset;
 }
+
 </style>

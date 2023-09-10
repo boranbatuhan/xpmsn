@@ -6,7 +6,8 @@
     <mycomputer-comp v-if="store.state.openComputerWindow"></mycomputer-comp>
     <taskbar-comp></taskbar-comp>
     <folders-comp></folders-comp>
-    <messenger-comp></messenger-comp>
+    <messenger-comp v-if="store.state.openMsnWindow"></messenger-comp>
+    
 <!-- close and restart screens -->
 <closescreen-func-comp></closescreen-func-comp> 
 </template>

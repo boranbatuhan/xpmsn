@@ -1,5 +1,5 @@
 <template>
-    <div class=" fixed bottom-10 right-4">
+    <div @click="store.state.selectedFolderTab='messenger'" id="msnwindow" class=" fixed bottom-10 right-4">
         <div  class="window w-fit bg-grad min-h-[400px]">
             <div class=" title-bar shrink-0">
                 <div class="title-bar-text shrink-0 flex items-center justify-start gap-1">
@@ -14,7 +14,7 @@
                     </div>
                     <div  class="w-[22px] h-[22px] hover:shadow-inner hover:shadow-white rounded-sm transition-all duration-75 active:opacity-70 box-border ring-0 outline-none active:shadow-black fullsize">
                     </div>
-                    <div  class="w-[22px] h-[22px] hover:shadow-inner hover:shadow-white rounded-sm transition-all duration-75 active:opacity-70 box-border ring-0 outline-none active:shadow-black close">
+                    <div @click="store.state.openMsnWindow=false" class="w-[22px] h-[22px] hover:shadow-inner hover:shadow-white rounded-sm transition-all duration-75 active:opacity-70 box-border ring-0 outline-none active:shadow-black close">
                     </div>
                 </div>
                 <!-- window buttons end -->
@@ -65,9 +65,10 @@
                             <input type="checkbox" name="rAut" id="rAut">
                             <p>Sign me in automatically</p>
                         </label>
-                    <p class="text-[#193858]  text-xs font-segoe-ui cursor-pointer text-start w-full">Forgot your password?</p>
+                    <p class="text-[#193858] w-fit text-xs font-segoe-ui cursor-pointer text-start ">Forgot your password?</p>
                     </form>
                     <button class="px-2 py-px ">Sign in</button>
+
                 </div>
                 <!-- form area end -->
                 <p class="text-[#0f5ba7]  text-xs font-segoe-ui cursor-pointer text-start w-full tracking-tighter p-2">Need a help?</p>
@@ -80,6 +81,8 @@
 
 <script setup>
 import { ref } from "vue";
+import store from "/src/store";
+
 
 
 
@@ -89,7 +92,7 @@ const selectStatus = (status) =>{
 }
 </script>
 
-<style scoped>
+<style>
 
 .title-bar {
     font-family: Trebuchet MS;
