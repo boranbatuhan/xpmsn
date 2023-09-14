@@ -10,6 +10,8 @@
 <a href="https://vitejs.dev" target="_blank" rel="noreferrer"> <img src="https://vitejs.dev/logo-with-shadow.png" alt="vitejs" width="40" height="40"/> </a> 
  <a href="https://tailwindcss.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" alt="tailwindcss" width="40" height="40"/> 
  </a>  
+ <a href="https://vueuse.org" target="_blank" rel="noreferrer"> <img src="https://vueuse.org/favicon.svg" alt="vueuse" width="40" height="40"/> 
+ </a>  
 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> </a> 
 <a href="https://vercel.com" target="_blank" rel="noreferrer"> <img src="https://seeklogo.com/images/V/vercel-logo-F748E39008-seeklogo.com.png" alt="vercel" width="40" height="40"/> </a> 
 
