@@ -42,8 +42,8 @@
 </template>
 
 <script setup>
-import startmenuComp from '/src/components/startmenuComp.vue';
-import clockComp from '/src/components/clockComp.vue';
+import startmenuComp from '/src/components/taskbar/startmenuComp.vue';
+import clockComp from '/src/components/taskbar/clockComp.vue';
 import store from "/src/store"
 import { onMounted, ref } from 'vue';
 

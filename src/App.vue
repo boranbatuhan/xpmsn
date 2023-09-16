@@ -16,17 +16,6 @@ import { onMounted } from "vue";
 </script>
 
 <style>
-html{
-  background-image: url("/src/assets/941898.jpg");
-  background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
 
-}
-*{
-  font-family: "Pixelated MS Sans Serif",Arial;
-    -webkit-font-smoothing: antialiased;
-}
 
 </style>

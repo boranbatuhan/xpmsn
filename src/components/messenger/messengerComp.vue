@@ -1,7 +1,7 @@
 <template>
-    <div @click="store.state.selectedFolderTab='messenger'" id="msnwindow" class=" fixed bottom-10 right-4">
-        <div  class="window w-fit bg-grad min-h-[400px]">
-            <div class=" title-bar shrink-0">
+    <div :style="style" @click="store.state.selectedFolderTab='messenger'" id="msnwindow" class=" fixed w-fit !shrink-0">
+        <div  class="window w-fit bg-grad min-w-[300px] min-h-[400px]">
+            <div ref="messengerRef" class=" title-bar shrink-0">
                 <div class="title-bar-text shrink-0 flex items-center justify-start gap-1">
                     <div class="w-fit h-4">
                         <img loading="lazy" draggable="false" src="/src/assets/msnlogo.png" alt="msnlogo" class="w-fit h-full">
@@ -71,7 +71,7 @@
 
                 </div>
                 <!-- form area end -->
-                <p class="text-[#0f5ba7]  text-xs font-segoe-ui cursor-pointer text-start w-full tracking-tighter p-2">Need a help?</p>
+                <p class="text-[#0f5ba7]   text-xs font-segoe-ui cursor-pointer text-start w-fit mr-auto tracking-tighter p-2">Need a help?</p>
 
             </div>
             <!-- content end -->
@@ -82,6 +82,7 @@
 <script setup>
 import { ref } from "vue";
 import store from "/src/store";
+import { useDraggable } from '@vueuse/core'
 
 
 
@@ -90,6 +91,16 @@ const selectedStatus = ref("Available")
 const selectStatus = (status) =>{
     selectedStatus.value = status
 }
+
+
+
+
+const messengerRef = ref(null)
+
+const { x, y, style } = useDraggable(messengerRef, {
+
+})
+
 </script>
 
 <style>

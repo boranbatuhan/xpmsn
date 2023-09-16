@@ -1,7 +1,7 @@
 <template>
-    <div @click="store.state.selectedFolderTab='computer'" id="computerwindow" class="z-[9990]  shrink-0 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+    <div :style="style" @click="store.state.selectedFolderTab='computer'" id="computerwindow" class="z-[9990]  shrink-0 absolute ">
     <div  class="window w-[606px] h-[448px] bg-[#fcfcfe] !overflow-hidden ">
-        <div class=" title-bar shrink-0" >
+        <div ref="pcWindowRef" class=" title-bar shrink-0" >
             <div class="title-bar-text shrink-0">
                 <div class="flex items-center justify-start gap-1">
           <img draggable="false" src="/src/assets/computer.png" alt="folder" class="w-4">
@@ -145,15 +145,19 @@
 <script setup>
 import { onMounted, ref } from 'vue';
 import store from "/src/store"
-const titlebarClick = ref(false)
+import { useDraggable } from '@vueuse/core'
+
+
 
 function removeWindow(e) {
-//     const computerwindow = e.target.offsetParent.id
-//     console.log('computerwindow :>> ', computerwindow);
-//   var delWindow = document.getElementById("computerwindow");
-//   delWindow.parentNode.removeChild(delWindow);
 store.state.openComputerWindow=false
 }
+
+const pcWindowRef = ref(null)
+
+const { x, y, style } = useDraggable(pcWindowRef, {
+  initialValue: { x: 200, y:90 },
+})
 
 
 </script>
